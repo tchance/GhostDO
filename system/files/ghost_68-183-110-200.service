@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghost systemd service for blog: 68-183-110-200
+Documentation=https://docs.ghost.org
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/ghost
+User=999
+Environment="NODE_ENV=production"
+ExecStart=/usr/bin/node /usr/local/bin/ghost run
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
